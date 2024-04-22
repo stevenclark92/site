@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="https://steveclark.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://steveclark.io/" rel="alternate" type="text/html" /><updated>2024-04-22T12:42:44+01:00</updated><id>https://steveclark.io/feed.xml</id><title type="html">steveclark.io</title><subtitle>tbd</subtitle><entry><title type="html">Brief note on the NE555</title><link href="https://steveclark.io/electronics/stub/2024/04/21/555.html" rel="alternate" type="text/html" title="Brief note on the NE555" /><published>2024-04-21T13:00:00+01:00</published><updated>2024-04-21T13:00:00+01:00</updated><id>https://steveclark.io/electronics/stub/2024/04/21/555</id><content type="html" xml:base="https://steveclark.io/electronics/stub/2024/04/21/555.html"><![CDATA[<h2 id="notes-on-ne555-for-future">Notes on NE555 for future</h2>
+
+<p>Monostable 555s - at least in the configurations I’ve tried - will output for as long as the trigger is pulled low, even if the length of the delay based on R1 and C1 is shorter than the trigger duration. In practice, a one-shot timer configured to have a 0.01 millisecond pulse will not provide a 0.01 millisecond high output signal consistently from a button, as any deviation in the duration of the button press (over this time, at least) will be reflected in the output signal.</p>
+
+<p>/todo - confirm the problem isn’t sat in the chair.</p>]]></content><author><name></name></author><category term="Electronics" /><category term="Stub" /><summary type="html"><![CDATA[Notes on NE555 for future]]></summary></entry><entry><title type="html">6502 - ESP32 Interface</title><link href="https://steveclark.io/electronics/6502/esp-32/2024/04/20/6502.html" rel="alternate" type="text/html" title="6502 - ESP32 Interface" /><published>2024-04-20T13:52:00+01:00</published><updated>2024-04-20T13:52:00+01:00</updated><id>https://steveclark.io/electronics/6502/esp-32/2024/04/20/6502</id><content type="html" xml:base="https://steveclark.io/electronics/6502/esp-32/2024/04/20/6502.html"><![CDATA[<h2 id="notes">Notes</h2>
+
+<p>Rockwell 6502 and 65C02 chips can’t single cycle based on the clock signal the same way as WD processors can. In order to single cycle these chips, it’s better to pull RDY low. Depending on the specific model the outcome will be different.</p>
+
+<ul>
+  <li>For the NMOS 6502, pulling RDY low will hold state on a read operation. Write operations will finish with state only held on the next read.</li>
+  <li>For the CMOS 65C02, pulling RDY low will hold the state regardless of the current operation type.</li>
+</ul>
+
+<p>This is important as outputs will differ based on the specific processor in use.</p>
+
+<p>Should I wish to try and single-clock the 65C02, the clock must be held <em>high</em> not <em>low</em>. Single stepping involves pulling the signal low for no longer than 5 microseconds. Longer than this and the integrity of data stored in registers cannot be guaranteed.</p>
+
+<p>The NMOS 6502 cannot be held in either state.</p>
+
+<h3 id="interfacing-with-esp32-serial-monitor">Interfacing with ESP32 Serial Monitor</h3>
+
+<p>There are two ways I can see to single step these chips using the ESP32 Serial Monitor tool I wrote; The first of these will only work for the CMOS 65C02:</p>
+
+<ul>
+  <li>Provide the 65C02 with a constant high signal from the ESP32 on the clock in pin.</li>
+  <li>Use <code class="language-plaintext highlighter-rouge">delayMicroseconds(5)</code> in the Arduino IDE to pulse the clock low to cycle the clock.</li>
+  <li>Pull the pin high again at the end of this delay.</li>
+</ul>
+
+<p>Rough Arduino sketch of this approach can be found here: https://github.com/stevenclark92/stESP32/blob/main/stESP32_clockPulse.ino. It’s pretty janky but works more or less. Not a practical solution in current form.</p>
+
+<p>I need to explore the accuracy of these delay pulses to ensure the data in registers is still valid. /todo</p>
+
+<p>The second method I can see that would work on both processors is:</p>
+
+<ul>
+  <li>Provide a clock signal using a hardware clock. I’ll use 1 MHz for testing.</li>
+  <li>Pull RDY (pin 2) low using the ESP32.</li>
+  <li>Pulse RDY using <code class="language-plaintext highlighter-rouge">delayMicroseconds(1)</code> for single steps that match the 1 MHz clock frequency.</li>
+</ul>
+
+<p>This will depend on how well the microcontroller is able to accurately pulse for such short periods. Equally, the NMOS chip will continue performing writes until the next read instruction. I need to ensure - if possible - that I am able to read from the bus quickly enough that no steps are missed. It’s very hard to do this via serial at 1 MHz. It might be best to clock the NMOS chip down to its lowest stable configuration - I think it’s 100 KHz. I should be able to do this using Schmitt triggers, provided they provide a clean and stable enough signal.</p>
+
+<p>Onwards and upwards.</p>]]></content><author><name></name></author><category term="Electronics" /><category term="6502" /><category term="ESP-32" /><summary type="html"><![CDATA[Notes]]></summary></entry><entry><title type="html">IC Inventory</title><link href="https://steveclark.io/electronics/reference/2024/04/20/icInventory.html" rel="alternate" type="text/html" title="IC Inventory" /><published>2024-04-20T13:52:00+01:00</published><updated>2024-04-20T13:52:00+01:00</updated><id>https://steveclark.io/electronics/reference/2024/04/20/icInventory</id><content type="html" xml:base="https://steveclark.io/electronics/reference/2024/04/20/icInventory.html"><![CDATA[<h2 id="intro">Intro</h2>
+
+<p>This is for my own use. It’s a catalogue of my current inventory.</p>
+
+<h2 id="integrated-circuits">Integrated Circuits</h2>
+
+<h3 id="cpus">CPUs</h3>
+
+<table class="table-auto w-full my-6 text-left">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Family</th>
+      <th>Qty</th>
+      <th>Name</th>
+      <th>Spec</th>
+      <th>Technology</th>
+      <th>Package</th>
+      <th>Datasheet</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>CPU</td>
+      <td>6502</td>
+      <td>1</td>
+      <td>MOS 6502</td>
+      <td>1 MHz</td>
+      <td>NMOS</td>
+      <td>40-Pin DIP</td>
+      <td><a href="/assets/datasheets/MOS_6500_Datasheet.pdf">PDF</a></td>
+    </tr>
+    <tr>
+      <td>CPU</td>
+      <td>6502</td>
+      <td>1</td>
+      <td>Rockwell R6502AP</td>
+      <td>2 MHz</td>
+      <td>NMOS</td>
+      <td>40-Pin DIP</td>
+      <td><a href="/assets/datasheets/Rockwell_R650X_Datasheet.pdf">PDF</a></td>
+    </tr>
+    <tr>
+      <td>CPU</td>
+      <td>6502</td>
+      <td>1</td>
+      <td>Rockwell R65C02P4E</td>
+      <td>4 MHz</td>
+      <td>CMOS</td>
+      <td>40-Pin DIP</td>
+      <td><a href="/assets/datasheets/Rockwell_R65CX_Datasheet.pdf">PDF</a></td>
+    </tr>
+    <tr>
+      <td>CPU</td>
+      <td>68000</td>
+      <td>5</td>
+      <td>Motorola MC680000FN8</td>
+      <td>8 MHz</td>
+      <td>HMOS</td>
+      <td>68-Pin PLCC</td>
+      <td><a href="/assets/datasheets/mc68000.pdf">PDF</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="io--memory">I/O &amp; Memory</h3>
+
+<table class="table-auto w-full my-6 text-left">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Family</th>
+      <th>Qty</th>
+      <th>Name</th>
+      <th>Spec</th>
+      <th>Package</th>
+      <th>Datasheet</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>VIA</td>
+      <td>6522</td>
+      <td>1</td>
+      <td>MOS 6522 VIA</td>
+      <td>N/A</td>
+      <td>40-Pin DIP</td>
+      <td><a href="/assets/datasheets/MOS_MCS6522_Datasheet.pdf">PDF</a></td>
+    </tr>
+    <tr>
+      <td>SRAM</td>
+      <td> </td>
+      <td>1</td>
+      <td>Alliance AS6C62256-55PCN</td>
+      <td>265Kb</td>
+      <td>28-Pin DIP</td>
+      <td><a href="/assets/datasheets/AS6C62256_1.2.pdf">PDF</a></td>
+    </tr>
+    <tr>
+      <td>EEPROM</td>
+      <td> </td>
+      <td>1</td>
+      <td>Atmel AT28C256-15PU</td>
+      <td>265Kb</td>
+      <td>28-Pin DIP</td>
+      <td><a href="/assets/datasheets/AT28C256-15PU.pdf">PDF</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="logic--timing">Logic &amp; Timing</h3>
+
+<table class="table-auto w-full my-6 text-left">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Type</th>
+      <th>Qty</th>
+      <th>Name</th>
+      <th>Package</th>
+      <th>Datasheet</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Shift Register</td>
+      <td>PISO</td>
+      <td>5</td>
+      <td>SN74HC165</td>
+      <td>16-Pin DIP</td>
+      <td>TBA</td>
+    </tr>
+    <tr>
+      <td>Shift Register</td>
+      <td>SIPO</td>
+      <td>25</td>
+      <td>SN74HC595N</td>
+      <td>16-Pin DIP</td>
+      <td>TBA</td>
+    </tr>
+    <tr>
+      <td>Logic Gates</td>
+      <td>NAND</td>
+      <td>5</td>
+      <td>CD4093 2-Input NAND Gate/Schmitt Trigger</td>
+      <td>16-Pin DIP</td>
+      <td>TBA</td>
+    </tr>
+    <tr>
+      <td>Timer</td>
+      <td>555</td>
+      <td>10</td>
+      <td>NE555P</td>
+      <td>16-Pin DIP</td>
+      <td>TBA</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="microcontrollers">Microcontrollers</h2>
+
+<table class="table-fixed w-6/12 my-6 text-left">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Type</th>
+      <th>Qty</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Board</td>
+      <td>RPi Pico</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Board</td>
+      <td>ESP32-S2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>IC</td>
+      <td>ATMEGA328P</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>]]></content><author><name></name></author><category term="Electronics" /><category term="Reference" /><summary type="html"><![CDATA[Intro]]></summary></entry></feed>
