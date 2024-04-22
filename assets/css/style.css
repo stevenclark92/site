@@ -969,10 +969,6 @@ video {
   margin-top: 0px;
   margin-bottom: 0px;
 }
-.my-6 {
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-}
 .block {
   display: block;
 }
@@ -988,17 +984,8 @@ video {
 .min-h-svh {
   min-height: 100svh;
 }
-.w-6\/12 {
-  width: 50%;
-}
 .w-full {
   width: 100%;
-}
-.table-auto {
-  table-layout: auto;
-}
-.table-fixed {
-  table-layout: fixed;
 }
 .place-content-center {
   place-content: center;
