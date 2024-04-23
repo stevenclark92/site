@@ -1048,6 +1048,9 @@ video {
   -webkit-background-clip: text;
           background-clip: text;
 }
+.p-2 {
+  padding: 0.5rem;
+}
 .p-4 {
   padding: 1rem;
 }
@@ -1172,10 +1175,6 @@ video {
   .max-lg\:hidden {
     display: none;
   }
-
-  .max-lg\:p-4 {
-    padding: 1rem;
-  }
 }
 @media not all and (min-width: 768px) {
 
@@ -1185,8 +1184,8 @@ video {
 }
 @media (min-width: 1024px) {
 
-  .lg\:m-8 {
-    margin: 2rem;
+  .lg\:m-16 {
+    margin: 4rem;
   }
 
   .lg\:my-10 {
@@ -1196,10 +1195,6 @@ video {
 
   .lg\:hidden {
     display: none;
-  }
-
-  .lg\:p-10 {
-    padding: 2.5rem;
   }
 }
 @media (prefers-color-scheme: dark) {
