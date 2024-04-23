@@ -9,96 +9,88 @@
     <!-- Site title & meta -->
   </head>
 
-  <body class="dark:bg-zinc-800 dark:text-slate-50">
-
-    <header class="fixed w-full p-4 flex justify-between items-center shadow dark:shadow-none dark:bg-zinc-800 bg-slate-50">
-      <p id="logo" class="text-xl font-medium"><a href="https://steveclark.io/">steveclark<span class="text-yellow-400">.</span>io</a></p>
-      <nav>
-        <a class="" href="/notes">Notes</a>
-        <a class="px-2"href="/">About</a>
-      </nav>
-    </header>
-
-
-    <div class="container min-h-svh mx-auto place-content-center">
-      <main class="px-8 m-auto prose dark:prose-invert">
+  <body class="dark:bg-stone-800 dark:text-slate-50">
+    <div class="container flex mx-auto justify-center align-top mt-20">
+    <header class="basis-1/4">
+  <h1 id="logo-mb" class="text-2xl font-semibold"><a href="http://localhost:4000/">steveclark<span class="text-yellow-400">.</span>io</a></h1>
+  <nav class=" *:text-sm *:py-1">
+    <p class="mt-4"><span class="text-yellow-400 pr-2">|</span><a href="/notes">notes</a></p>
+    <p><span class="text-yellow-400 pr-2">|</span><a href="/projects">projects</a></p>
+    <p><span class="text-yellow-400 pr-2">|</span><a href="/">about</a></p>
+    <p class="mt-4"><span class="text-blue-400 pr-2">|</span><a href="https://github.com/stevenclark92">github</a></p>
+    <p><span class="text-blue-400 pr-2">|</span><a href="https://www.linkedin.com/in/stevenjc/">linkedin</a><p>
+  </nav>
+  <p class="text-xs text-stone-500 mt-10">© Steve Clark 2024</p>
+</header>  
+</footer>
+    <main class="prose dark:prose-invert grow">
         <h2 id="unstructured-notes">Unstructured notes</h2>
-
-
-  
-  <div class="py-8">
+ 
     
-    <div class="flex justify-between items-center">
-
-      <h3 class="m-0">
-        <a href="/electronics/2024/04/21/555.html">Brief note on the NE555</a>
-      </h3>
-      
-      <p class="inline-block my-0 text-xs font-semibold">April 21, 2024</p>
-      
-    </div>
-    <p> Notes on NE555 for future Monostable 555s - at least in the configurations I’ve tried - will output for as long as the trigger is...</p>
-    <!-- <div>
-      
-    </div> --> 
-  </div>
-  
-  <div class="py-8">
     
-    <div class="flex justify-between items-center">
 
-      <h3 class="m-0">
-        <a href="/electronics/2024/04/20/icInventory.html">IC Inventory</a>
-      </h3>
+    <div>
+      <div class="flex justify-between items-center">
+        <h3 class="m-0">
+          <a href="/electronics/2024/04/21/555.html">Brief note on the NE555</a>
+        </h3>
+
+        <p class="inline-block my-0 text-xs font-semibold">
+          April 21, 2024
+        </p>
+      </div>
+      <p>Notes on NE555 for future Monostable 555s - at least in the configurations I’ve tried - will output for as long as the trigger is...</p>
+      <!-- <div>
       
-      <p class="inline-block my-0 text-xs font-semibold">April 20, 2024</p>
-      
+    </div> -->
     </div>
-    <p> Intro This is for my own use. It’s a catalogue of my current inventory. Integrated Circuits CPUs Type Family Qty Name Spec Technology Package Datasheet...</p>
-    <!-- <div>
-      
-      <p class="inline-block border px-1 my-0 pb-0 text-yellow-300 border-yellow-300 rounded lowercase text-xs">Wiki</p>
-      
-      <p class="inline-block border px-1 my-0 pb-0 text-yellow-300 border-yellow-300 rounded lowercase text-xs">Notes</p>
-      
-    </div> --> 
-  </div>
-  
-  <div class="py-8">
     
-    <div class="flex justify-between items-center">
 
-      <h3 class="m-0">
-        <a href="/electronics/2024/04/20/6502.html">6502 - ESP32 Interface</a>
-      </h3>
+    <div>
+      <div class="flex justify-between items-center">
+        <h3 class="m-0">
+          <a href="/electronics/2024/04/20/icInventory.html">IC Inventory</a>
+        </h3>
+
+        <p class="inline-block my-0 text-xs font-semibold">
+          April 20, 2024
+        </p>
+      </div>
+      <p>Intro This is for my own use. It’s a catalogue of my current inventory. Integrated Circuits CPUs Type Family Qty Name Spec Technology Package Datasheet...</p>
+      <!-- <div>
       
-      <p class="inline-block my-0 text-xs font-semibold">April 20, 2024</p>
-      
+    </div> -->
     </div>
-    <p> Notes Rockwell 6502 and 65C02 chips can’t single cycle based on the clock signal the same way as WD processors can. In order to single...</p>
-    <!-- <div>
+    
+
+    <div>
+      <div class="flex justify-between items-center">
+        <h3 class="m-0">
+          <a href="/electronics/2024/04/20/6502.html">6502 - ESP32 Interface</a>
+        </h3>
+
+        <p class="inline-block my-0 text-xs font-semibold">
+          April 20, 2024
+        </p>
+      </div>
+      <p>Notes Rockwell 6502 and 65C02 chips can’t single cycle based on the clock signal the same way as WD processors can. In order to single...</p>
+      <!-- <div>
       
       <p class="inline-block border px-1 my-0 pb-0 text-yellow-300 border-yellow-300 rounded lowercase text-xs">Stub</p>
       
       <p class="inline-block border px-1 my-0 pb-0 text-yellow-300 border-yellow-300 rounded lowercase text-xs">Notes</p>
       
-    </div> --> 
-  </div>
-  
-
-      </main>
+    </div> -->
     </div>
+    
+  </main>
+</div>
 
-
-  <footer class="p-2 fixed bottom-0 w-full flex justify-between dark:bg-zinc-800 bg-slate-50">
-    <div class="socials flex">
-    <p class="px-2 text-sm italic text-left text-slate-500 dark:text-slate-300"><a href="https://github.com/stevenclark92">GitHub.</a></p>
-    <p class="pr-2 text-sm italic text-left text-slate-500 dark:text-slate-300"><a href="https://www.linkedin.com/in/stevenjc/">LinkedIn.</a></p>
+    </main>
     </div>
-    <p class="text-sm italic text-right text-slate-400 dark:text-slate-200">© 2024</p>
-  </footer>
-
+    <!-- JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
     <script>anchors.add();</script>
+  
   </body>
 </html>
