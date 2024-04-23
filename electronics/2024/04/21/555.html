@@ -11,12 +11,12 @@
   </head>
 
   <body class="dark:bg-stone-800 dark:text-slate-50 font-light">
-    <header class="fixed p-8 font-light max-lg:hidden">
+    <header class="fixed p-8 font-light max-lg:hidden top-10 left-10">
   <h1 id="logo-mb" class="text-2xl">
     <a href="https://steveclark.io/">steveclark<span class="text-yellow-400">.</span>io
     </a>
   </h1>
-  <nav class=" *:text-sm *:py-1">
+  <nav class="*:py-1">
     <p class="mt-8"><span class="text-yellow-400 pr-2">/</span><a href="/notes">notes</a></p>
     <p><span class="text-yellow-400 pr-2">/</span><a href="/projects">projects</a></p>
     <p><span class="text-yellow-400 pr-2">/</span><a href="/">about</a></p>
@@ -41,9 +41,8 @@
 
 <p class="text-xs bg-inherit rounded-md text-stone-500 mt-8 fixed bottom-0 p-2">© Steve Clark 2024</p>
 
-
-    <main class="shrink items-center">
-      <div class="content prose prose-headings:font-light prose-a:font-light dark:prose-invert mx-auto p-8 max-lg:p-4 max-lg:mb-10 lg:pt-24">
+    <main class="shrink">
+      <div class="content prose prose-headings:font-light prose-a:font-light dark:prose-invert mx-auto p-8 max-lg:p-4 lg:my-10">
     <h2 id="notes-on-ne555-for-future">Notes on NE555 for future</h2>
 
 <p>Monostable 555s - at least in the configurations I’ve tried - will output for as long as the trigger is pulled low, even if the length of the delay based on R1 and C1 is shorter than the trigger duration. In practice, a one-shot timer configured to have a 0.01 millisecond pulse will not provide a 0.01 millisecond high output signal consistently from a button, as any deviation in the duration of the button press (over this time, at least) will be reflected in the output signal.</p>

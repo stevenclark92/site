@@ -922,6 +922,12 @@ video {
 .bottom-0 {
   bottom: 0px;
 }
+.left-10 {
+  left: 2.5rem;
+}
+.top-10 {
+  top: 2.5rem;
+}
 .m-0 {
   margin: 0px;
 }
@@ -1098,10 +1104,6 @@ video {
 }
 @media not all and (min-width: 1024px) {
 
-  .max-lg\:mb-10 {
-    margin-bottom: 2.5rem;
-  }
-
   .max-lg\:hidden {
     display: none;
   }
@@ -1112,12 +1114,13 @@ video {
 }
 @media (min-width: 1024px) {
 
-  .lg\:hidden {
-    display: none;
+  .lg\:my-10 {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
   }
 
-  .lg\:pt-24 {
-    padding-top: 6rem;
+  .lg\:hidden {
+    display: none;
   }
 }
 @media (prefers-color-scheme: dark) {
