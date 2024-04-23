@@ -919,8 +919,8 @@ video {
 .fixed {
   position: fixed;
 }
-.bottom-0 {
-  bottom: 0px;
+.bottom-10 {
+  bottom: 2.5rem;
 }
 .left-10 {
   left: 2.5rem;
