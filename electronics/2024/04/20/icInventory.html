@@ -9,21 +9,40 @@
     <!-- Site title & meta -->
   </head>
 
-  <body class="dark:bg-stone-800 dark:text-slate-50">
-    <div class="container flex mx-auto justify-center align-top mt-20">
-    <header class="basis-1/4">
-  <h1 id="logo-mb" class="text-2xl font-semibold"><a href="http://localhost:4000/">steveclark<span class="text-yellow-400">.</span>io</a></h1>
+  <body class="dark:bg-stone-800 dark:text-slate-50 font-light">
+    <header class="fixed p-8 font-light max-lg:hidden">
+  <h1 id="logo-mb" class="text-2xl">
+    <a href="https://steveclark.io/">steveclark<span class="text-yellow-400">.</span>io
+    </a>
+  </h1>
   <nav class=" *:text-sm *:py-1">
-    <p class="mt-4"><span class="text-yellow-400 pr-2">|</span><a href="/notes">notes</a></p>
-    <p><span class="text-yellow-400 pr-2">|</span><a href="/projects">projects</a></p>
-    <p><span class="text-yellow-400 pr-2">|</span><a href="/">about</a></p>
+    <p class="mt-8"><span class="text-yellow-400 pr-2">/</span><a href="/notes">notes</a></p>
+    <p><span class="text-yellow-400 pr-2">/</span><a href="/projects">projects</a></p>
+    <p><span class="text-yellow-400 pr-2">/</span><a href="/">about</a></p>
     <p class="mt-4"><span class="text-blue-400 pr-2">|</span><a href="https://github.com/stevenclark92">github</a></p>
     <p><span class="text-blue-400 pr-2">|</span><a href="https://www.linkedin.com/in/stevenjc/">linkedin</a><p>
   </nav>
-  <p class="text-xs text-stone-500 mt-10">© Steve Clark 2024</p>
 </header>  
-</footer>
-    <main class="prose dark:prose-invert grow">
+
+<header class="p-4 font-light lg:hidden flex items-center justify-between shadow">
+  <h1 id="logo-mb" class="text-2xl">
+    <a href="https://steveclark.io/">sc<span class="text-yellow-400">.</span>io
+    </a>
+  </h1>
+  <nav class=" *:text-sm *:py-1 *:inline">
+    <p class="mt-8"><span class="text-yellow-400 pr-2 pl-3">/</span><a href="/notes">notes</a></p>
+    <p><span class="text-yellow-400 pr-2 pl-3">/</span><a href="/projects">projects</a></p>
+    <p><span class="text-yellow-400 pr-2 pl-3">/</span><a href="/">about</a></p>
+    <p class="mt-4"><span class="text-blue-400 pr-2 pl-3">|</span><a href="https://github.com/stevenclark92">github</a></p>
+    <p><span class="text-blue-400 pr-2 pl-3">|</span><a href="https://www.linkedin.com/in/stevenjc/">linkedin</a><p>
+  </nav>
+</header>  
+
+<p class="text-xs bg-inherit rounded-md text-stone-500 mt-8 fixed bottom-0 p-2">© Steve Clark 2024</p>
+
+
+    <main class="shrink items-center">
+      <div class="content prose prose-headings:font-light prose-a:font-light dark:prose-invert mx-auto p-8 max-lg:p-4 lg:pt-24">
     <h2 id="intro">Intro</h2>
 
 <p>This is for my own use. It’s a catalogue of my current inventory.</p>
@@ -213,8 +232,8 @@
 </table>
 
 
-    </main>
     </div>
+    </main>
     <!-- JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
     <script>anchors.add();</script>
