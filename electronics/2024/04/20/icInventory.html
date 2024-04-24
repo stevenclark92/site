@@ -1,6 +1,8 @@
 <!DOCTYPE html>
+
 <html lang="en-GB">
   <head>
+    <!-- Meta -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -42,43 +44,35 @@
 <link href="/assets/favicon/apple-startup-1496x2048.png" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" rel="apple-touch-startup-image" />
 <link href="/assets/favicon/apple-startup-1536x2008.png" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" rel="apple-touch-startup-image" />
 <link rel="manifest" href="/assets/favicon/manifest.json" />
-    
-    <!-- Accessibility adjustments needed -->
     <!-- Site title & meta -->
     <title>IC Inventory | steveclark.io</title>
-
+    <!-- TODO metadesc -->
   </head>
 
   <body class="dark:bg-zinc-800 dark:text-slate-50">
-    <header class="fixed p-8 font-light max-lg:hidden top-10 left-10">
-  <h1 id="logo-mb" class="text-2xl">
-    <a href="https://steveclark.io/">steveclark<span class="text-yellow-400">.</span>io
+    <header class="lg:fixed max-lg:flex max-xl:items-baseline p-8 lg:top-10 lg:left-10 font-light">
+  <h2 id="logo-mb" class="text-2xl">
+    <a class="max-xl:hidden" href="https://steveclark.io/">steveclark<span class="text-yellow-400">.</span>io
     </a>
-  </h1>
-  <nav class="*:py-1">
-    <p class="mt-8"><span class="text-yellow-400 pr-2">/</span><a href="/notes">notes</a></p>
-    <p><span class="text-yellow-400 pr-2">/</span><a href="/projects">projects</a></p>
-    <p><span class="text-yellow-400 pr-2">/</span><a href="/about">about</a></p>
-    <p class="mt-4"><span class="text-blue-400 pr-2">|</span><a href="https://github.com/stevenclark92">github</a></p>
-    <p><span class="text-blue-400 pr-2">|</span><a href="https://www.linkedin.com/in/stevenjc/">linkedin</a><p>
-  </nav>
-</header>  
-
-<header class="p-4 font-light lg:hidden flex items-center justify-between shadow mb-4">
-  <h1 id="logo-mb" class="text-2xl">
-    <a href="https://steveclark.io/">sc<span class="text-yellow-400">.</span>io
+    <a class="xl:hidden" href="https://steveclark.io/">sc<span class="text-yellow-400">.</span>io
     </a>
-  </h1>
-  <nav class="*:py-1 *:inline">
-    <p class="mt-8"><span class="text-yellow-400">/ </span><a href="/notes">notes</a></p>
-    <p><span class="text-yellow-400">/ </span><a href="/projects">projects</a></p>
-    <p><span class="text-yellow-400">/ </span><a href="/about">about</a></p>
+  </h2>
+  <nav class="*:py-1 lg:*:mt-4 max-lg:*:flex max-lg:flex justify-between w-full">
+    <ul class="lg:*:mt-2">
+      <li><span class="text-yellow-400 mr-1 max-lg:ml-2">/</span><a href="/notes">notes</a></li>
+      <li><span class="text-yellow-400 mr-1 max-lg:ml-2">/</span><a href="/projects">projects</a></li>
+      <li><span class="text-yellow-400 mr-1 max-lg:ml-2">/</span><a href="/about">about</a></li>
+    </ul>
+    <ul class="lg:*:mt-2 max-sm:hidden">
+      <li><span class="text-blue-400 mr-1 max-lg:ml-2">|</span><a href="https://github.com/stevenclark92" target="_blank">github</a></li>
+      <li><span class="text-blue-400 mr-1 max-lg:ml-2">|</span><a href="https://www.linkedin.com/in/stevenjc/" target="_blank">linkedin</a></li>
+    </ul>
   </nav>
 </header>
-    <main class="shrink">
-    <div class="prose prose-headings:font-normal prose-a:font-normal dark:prose-invert mx-auto p-8 max-md:p-4 lg:my-10 mb-4">
-
-<div class="categories font-semibold flex justify-between align-top *:mt-0">
+    <main class="lg:m-10 p-8">
+      <!-- TODO: Refactor -->
+      <div class="mx-auto prose prose-a:font-normal prose-a:decoration-wavy prose-a:decoration-1 prose-h1:font-bold prose-h2:font-medium dark:prose-invert">
+        <div class="categories font-semibold flex justify-between align-top *:mt-0">
     <p
       class="text-transparent bg-clip-text bg-gradient-to-br from-blue-300 to-indigo-500 lowercase"
     >
@@ -294,8 +288,8 @@
   </tbody>
 </table>
 
-</div>
-    </div>
+
+      </div>
     </main>
 
 
