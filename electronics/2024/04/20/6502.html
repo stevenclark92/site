@@ -51,12 +51,12 @@
 
   <body class="dark:bg-zinc-800 dark:text-slate-50">
     <header class="lg:fixed max-lg:flex max-xl:items-baseline p-8 lg:top-10 lg:left-10 font-light">
-  <h2 id="logo-mb" class="text-2xl">
-    <a class="max-xl:hidden" href="https://steveclark.io/">steveclark<span class="text-yellow-400">.</span>io
+  <p id="logo-mb" class="text-2xl">
+    <a class="max-xl:hidden" href="http://localhost:4000/">steveclark<span class="text-yellow-400">.</span>io
     </a>
-    <a class="xl:hidden" href="https://steveclark.io/">sc<span class="text-yellow-400">.</span>io
+    <a class="xl:hidden" href="http://localhost:4000/">sc<span class="text-yellow-400">.</span>io
     </a>
-  </h2>
+  </p>
   <nav class="*:py-1 lg:*:mt-4 max-lg:*:flex max-lg:flex justify-between w-full">
     <ul class="lg:*:mt-2">
       <li><span class="text-yellow-400 mr-1 max-lg:ml-2">/</span><a href="/notes">notes</a></li>
@@ -71,36 +71,35 @@
 </header>
     <main class="lg:m-10 p-8">
       <!-- TODO: Refactor -->
-      <div class="mx-auto prose prose-a:font-normal prose-a:decoration-1 prose-h1:font-bold prose-h2:font-medium dark:prose-invert">
-        <div class="categories font-semibold flex justify-between align-top *:mt-0">
-    <p
-      class="text-transparent bg-clip-text bg-gradient-to-br from-blue-300 to-indigo-500 lowercase"
+      <div class="mx-auto prose prose-a:font-normal prose-a:decoration-1 prose-h1:font-bold prose-h2:font-medium dark:prose-invert mb-6">
+        <div class="categories flex justify-between align-top mb-4">
+  <p class="m-0 align">
+    Posted on <span class="font-semibold">April 20, 2024</span> in
+    <span
+      class="text-transparent bg-clip-text bg-gradient-to-br from-blue-300 to-indigo-500 lowercase font-semibold"
     >
       @Electronics
-    </p>
-    <div class="tags *:inline *:text-xs">
+    </span>
+  </p>
+
+  <div class="tags *:inline max-sm:hidden">
     
     <p
-      class="text-transparent bg-clip-text bg-gradient-to-br from-yellow-300 to-amber-500 lowercase"
+      class="text-transparent bg-clip-text bg-gradient-to-br from-yellow-300 to-amber-500 lowercase font-semibold"
     >
       [Stub]
     </p>
     
     <p
-      class="text-transparent bg-clip-text bg-gradient-to-br from-yellow-300 to-amber-500 lowercase"
+      class="text-transparent bg-clip-text bg-gradient-to-br from-yellow-300 to-amber-500 lowercase font-semibold"
     >
       [Notes]
     </p>
     
-</div>
   </div>
-
-<h1
-  class="head flex justify-between mb-4 items-baseline">6502 - ESP32 Interface</h1>
-
-<div class="shrink-0 flex justify-between pt-2">
-    <p class="m-0 text-sm font-semibold align">April 20, 2024</p>
 </div>
+
+<h1 class="head flex justify-between mb-4 items-baseline">6502 - ESP32 Interface</h1>
 
 <p>Rockwell 6502 and 65C02 chips can’t single cycle based on the clock signal the same way as WD processors can. In order to single cycle these chips, it’s better to pull RDY low. Depending on the specific model the outcome will be different.</p>
 
