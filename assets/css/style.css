@@ -1091,17 +1091,14 @@ video {
 .to-amber-500 {
     --tw-gradient-to:#f59e0b var(--tw-gradient-to-position);
 }
-.to-amber-700 {
-    --tw-gradient-to:#b45309 var(--tw-gradient-to-position);
-}
 .to-indigo-500 {
     --tw-gradient-to:#6366f1 var(--tw-gradient-to-position);
 }
-.to-orange-800 {
-    --tw-gradient-to:#9a3412 var(--tw-gradient-to-position);
+.to-orange-500 {
+    --tw-gradient-to:#f97316 var(--tw-gradient-to-position);
 }
-.to-rose-800 {
-    --tw-gradient-to:#9f1239 var(--tw-gradient-to-position);
+.to-purple-500 {
+    --tw-gradient-to:#a855f7 var(--tw-gradient-to-position);
 }
 .bg-clip-text {
     -webkit-background-clip:text;
