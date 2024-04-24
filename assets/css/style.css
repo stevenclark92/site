@@ -1249,6 +1249,12 @@ video {
         padding:1rem;
     }
 }
+@media (min-width: 640px) {
+
+    .sm\:hidden {
+        display:none;
+    }
+}
 @media (min-width: 1024px) {
 
     .lg\:m-16 {
