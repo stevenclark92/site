@@ -1219,10 +1219,6 @@ video {
     padding-top:0.25rem;
     padding-bottom:0.25rem;
 }
-.\*\:text-sm > * {
-    font-size:0.875rem;
-    line-height:1.25rem;
-}
 .\*\:text-xs > * {
     font-size:0.75rem;
     line-height:1rem;
@@ -1247,12 +1243,6 @@ video {
 
     .max-md\:p-4 {
         padding:1rem;
-    }
-}
-@media (min-width: 640px) {
-
-    .sm\:hidden {
-        display:none;
     }
 }
 @media (min-width: 1024px) {
