@@ -101,12 +101,12 @@
 
 <h1 class="head flex justify-between mb-4 items-baseline">Key 6502 Addresses</h1>
 
-<p>The 6502 has hard-coded locations/addresses that are imperative for useful functioning. The former of these correspond to specific pages (which are each 256 bits long). The latter is 4 bits, ideally stored in ROM, that are read during initialisation and hold the address from which the 6502 will begin to read instructions upon boot.</p>
+<p>The 6502 will attempt to use several hard-coded addresses during normal operation; the presence of usable RAM or ROM at these locations is imperative for useful function. The former of these correspond to specific pages (which are each 256 bits long). The latter is an address, ideally stored in ROM, that is read during initialisation and from which the 6502 will begin to read instructions upon boot.</p>
 
 <ul>
-  <li>The zero page (ZP) is</li>
+  <li>The zero page (ZP) is heavily used for storing registers.</li>
   <li>The second page is reserved for the stack, addresses 256-511 (0100-01FF).</li>
-  <li>The final 4 bits of address space at 65532-65536 (FFFC-FFFD) are reserved for initialisation.</li>
+  <li>The final two bytes of address space at addresses 65532-65536 (FFFC-FFFD) are reserved for initialisation.</li>
 </ul>
 
 <p>I’ll probably update this stub to include more non-address-centric information. <a href="http://wilsonminesco.com/6502primer/">This guide has been a fantastic help</a>.</p>
