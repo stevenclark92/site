@@ -45,7 +45,7 @@
 <link href="/assets/favicon/apple-startup-1536x2008.png" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" rel="apple-touch-startup-image" />
 <link rel="manifest" href="/assets/favicon/manifest.json" />
     <!-- Site title & meta -->
-    <title>Notes | steveclark.io</title>
+    <title>Key 6502 Addresses | steveclark.io</title>
     <!-- TODO metadesc -->
   </head>
 
@@ -72,176 +72,44 @@
     <main class="lg:m-10 p-8">
       <!-- TODO: Refactor -->
       <div class="mx-auto prose prose-a:font-normal prose-a:decoration-1 prose-h1:font-bold prose-h2:font-medium dark:prose-invert mb-6">
-            <h1>Notes.</h1>
-    <hr class="w-12 dark:border-white my-8">
-    <p>
-        This is a space for my works in progress. It's not particularly well structured right now, and I mostly use this space for accessing datasheets when I'm moving between devices.
-    </p> 
-
-
-<div class="my-10">
-
-<div class="flex justify-between text-sm">
+        <div class="categories flex justify-between align-top mb-4">
   <p class="m-0 align">
-    Posted on 
-    <span class="font-semibold">April 28, 2024</span> 
-    in
-    <span class="text-transparent bg-clip-text bg-gradient-to-br from-blue-300 to-indigo-500 lowercase font-semibold">
+    Posted on <span class="font-semibold">April 28, 2024</span> in
+    <span
+      class="text-transparent bg-clip-text bg-gradient-to-br from-blue-300 to-indigo-500 lowercase font-semibold"
+    >
       @Electronics
     </span>
   </p>
 
   <div class="tags *:inline max-sm:hidden">
     
-    <p class="text-transparent bg-clip-text bg-gradient-to-br from-yellow-300 to-amber-500 lowercase font-semibold">
+    <p
+      class="text-transparent bg-clip-text bg-gradient-to-br from-yellow-300 to-amber-500 lowercase font-semibold"
+    >
       [6502]
     </p>
     
-    <p class="text-transparent bg-clip-text bg-gradient-to-br from-yellow-300 to-amber-500 lowercase font-semibold">
+    <p
+      class="text-transparent bg-clip-text bg-gradient-to-br from-yellow-300 to-amber-500 lowercase font-semibold"
+    >
       [Specs]
     </p>
     
   </div>
 </div>
 
-<h3 class="text-2xl my-3">
-  <a class="no-underline" href="/electronics/6502-Addresses">Key 6502 Addresses</a>
-</h3>
+<h1 class="head flex justify-between mb-4 items-baseline">Key 6502 Addresses</h1>
 
-<p>The 6502 has hard-coded locations/addresses that are imperative for useful functioning. The former of these correspond to specific pages (which are each 256 bits long)....</p>
-</div>
+<p>The 6502 has hard-coded locations/addresses that are imperative for useful functioning. The former of these correspond to specific pages (which are each 256 bits long). The latter is 4 bits, ideally stored in ROM, that are read during initialisation and hold the address from which the 6502 will begin to read instructions upon boot.</p>
 
+<ul>
+  <li>The zero page (ZP) is</li>
+  <li>The second page is reserved for the stack, addresses 256-511 (0100-01FF).</li>
+  <li>The final 4 bits of address space at 65532-65536 (FFFC-FFFD) are reserved for initialisation.</li>
+</ul>
 
-<div class="my-10">
-
-<div class="flex justify-between text-sm">
-  <p class="m-0 align">
-    Posted on 
-    <span class="font-semibold">April 27, 2024</span> 
-    in
-    <span class="text-transparent bg-clip-text bg-gradient-to-br from-blue-300 to-indigo-500 lowercase font-semibold">
-      @3D_Printing
-    </span>
-  </p>
-
-  <div class="tags *:inline max-sm:hidden">
-    
-    <p class="text-transparent bg-clip-text bg-gradient-to-br from-yellow-300 to-amber-500 lowercase font-semibold">
-      [Stub]
-    </p>
-    
-    <p class="text-transparent bg-clip-text bg-gradient-to-br from-yellow-300 to-amber-500 lowercase font-semibold">
-      [Notes]
-    </p>
-    
-  </div>
-</div>
-
-<h3 class="text-2xl my-3">
-  <a class="no-underline" href="/3d_printing/3D-Printing-a-Transparent-Diffuser">3D Printing a Transparent PLA Light Diffuser</a>
-</h3>
-
-<p>I’m working with a Bambu Lab P1S. I love it. As most of my prints are functional rather than decorative, I opted against buying the...</p>
-</div>
-
-
-<div class="my-10">
-
-<div class="flex justify-between text-sm">
-  <p class="m-0 align">
-    Posted on 
-    <span class="font-semibold">April 21, 2024</span> 
-    in
-    <span class="text-transparent bg-clip-text bg-gradient-to-br from-blue-300 to-indigo-500 lowercase font-semibold">
-      @Electronics
-    </span>
-  </p>
-
-  <div class="tags *:inline max-sm:hidden">
-    
-    <p class="text-transparent bg-clip-text bg-gradient-to-br from-yellow-300 to-amber-500 lowercase font-semibold">
-      [Stub]
-    </p>
-    
-    <p class="text-transparent bg-clip-text bg-gradient-to-br from-yellow-300 to-amber-500 lowercase font-semibold">
-      [Notes]
-    </p>
-    
-  </div>
-</div>
-
-<h3 class="text-2xl my-3">
-  <a class="no-underline" href="/electronics/555">A Brief Note About the NE555</a>
-</h3>
-
-<p>This is literally the first Google result for the search term “image”. Not my image. Monostable 555s - at least in the configurations I’ve tried...</p>
-</div>
-
-
-<div class="my-10">
-
-<div class="flex justify-between text-sm">
-  <p class="m-0 align">
-    Posted on 
-    <span class="font-semibold">April 20, 2024</span> 
-    in
-    <span class="text-transparent bg-clip-text bg-gradient-to-br from-blue-300 to-indigo-500 lowercase font-semibold">
-      @Electronics
-    </span>
-  </p>
-
-  <div class="tags *:inline max-sm:hidden">
-    
-    <p class="text-transparent bg-clip-text bg-gradient-to-br from-yellow-300 to-amber-500 lowercase font-semibold">
-      [Inventory]
-    </p>
-    
-    <p class="text-transparent bg-clip-text bg-gradient-to-br from-yellow-300 to-amber-500 lowercase font-semibold">
-      [Specs]
-    </p>
-    
-  </div>
-</div>
-
-<h3 class="text-2xl my-3">
-  <a class="no-underline" href="/electronics/IC-Inventory">My Inventory of ICs</a>
-</h3>
-
-<p>This is for my own use. It’s a catalogue of my current inventory. Integrated Circuits CPUs Type Family Qty Name Spec Technology Package Datasheet CPU...</p>
-</div>
-
-
-<div class="my-10">
-
-<div class="flex justify-between text-sm">
-  <p class="m-0 align">
-    Posted on 
-    <span class="font-semibold">April 20, 2024</span> 
-    in
-    <span class="text-transparent bg-clip-text bg-gradient-to-br from-blue-300 to-indigo-500 lowercase font-semibold">
-      @Electronics
-    </span>
-  </p>
-
-  <div class="tags *:inline max-sm:hidden">
-    
-    <p class="text-transparent bg-clip-text bg-gradient-to-br from-yellow-300 to-amber-500 lowercase font-semibold">
-      [Stub]
-    </p>
-    
-    <p class="text-transparent bg-clip-text bg-gradient-to-br from-yellow-300 to-amber-500 lowercase font-semibold">
-      [Notes]
-    </p>
-    
-  </div>
-</div>
-
-<h3 class="text-2xl my-3">
-  <a class="no-underline" href="/electronics/6502">Monitoring a 6502 with an ESP32</a>
-</h3>
-
-<p>Rockwell 6502 and 65C02 chips can’t single cycle based on the clock signal the same way as WD processors can. In order to single cycle...</p>
-</div>
+<p>I’ll probably update this stub to include more non-address-centric information. <a href="http://wilsonminesco.com/6502primer/">This guide has been a fantastic help</a>.</p>
 
 
       </div>
