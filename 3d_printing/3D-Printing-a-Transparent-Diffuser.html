@@ -45,7 +45,7 @@
 <link href="/assets/favicon/apple-startup-1536x2008.png" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" rel="apple-touch-startup-image" />
 <link rel="manifest" href="/assets/favicon/manifest.json" />
     <!-- Site title & meta -->
-    <title>3D Printing an LED Diffuser Panel | steveclark.io</title>
+    <title>3D Printing a Transparent PLA Light Diffuser | steveclark.io</title>
     <!-- TODO metadesc -->
   </head>
 
@@ -99,7 +99,7 @@
   </div>
 </div>
 
-<h1 class="head flex justify-between mb-4 items-baseline">3D Printing an LED Diffuser Panel</h1>
+<h1 class="head flex justify-between mb-4 items-baseline">3D Printing a Transparent PLA Light Diffuser</h1>
 
 <p><img src="https://www.additive-x.com/shop/pub/media/catalog/product/cache/69c0836d7a09588992d42550a1461e94/b/a/bambu_lab_p1s.png" alt="Bambu Lab P1S - without the optional AMS" />
 <small class="mt-0 pt-0 italic">I’m working with a Bambu Lab P1S. I love it. As most of my prints are functional rather than decorative, I opted against buying the AMS.<small></small></small></p>
@@ -122,7 +122,96 @@
 
 <p>In a similar vein, resin printing would also likely make a good candidate for this, too, but I don’t have access to a resin printer, my partner would likely pack their bags if I bought home any more toys, and I’d rather avoid the use of those chemicals in my home.</p>
 
-<p>More to come.</p>
+<h2 id="selecting-a-filament">Selecting a Filament</h2>
+
+<p>There are an abundance of PLA options on the market with various additives, resultant characteristics, and price points. As the core requirement of this project was accessibility to the greatest number of home enthusiasts, I opted against using a premium option. PLA for the most part - additives or not - is PLA. I simply selected the cheapest transparent option available for next-day shipping from Amazon, which at the time of writing was Elegoo’s Transparent PLA+. I believe this cost £12 (~$15).</p>
+
+<h2 id="dialling-in-print-settings">Dialling in Print Settings</h2>
+
+<p>A material’s transparency and optical characteristics are heavily impacted by its uniformity, which makes achieving an acceptable end result using FDM printing a challenge. Layer lines are part of the issue, but equally, layer adhesion and differences in cooling speed also play a role in the product’s finish. In broad terms, best results are achieved by:</p>
+
+<ul>
+  <li>Using a heated bed and untextured build plate.</li>
+  <li>Disabling part cooling to slow solidification of the filament.</li>
+  <li>Increasing the nozzle temperature to the limit of - or even slightly over - spec.</li>
+  <li>Increasing the flow rate and layer height.</li>
+  <li>Printing as slowly as possible.</li>
+  <li>Using a larger nozzle diameter.</li>
+</ul>
+
+<p>All of these settings are designed to increase the bond between layers as much as possible, by making those layers thicker and hotter, and reducing how quickly they cool. Increasing the flow rate, too, causes layer lines to be rounder; this, too, has a positive impact on the optical characteristics of the panel. Again, as I was focused primarily on accessibility, I only changed things which could be changed without the purchase of new parts. That means printing on the standard textured build plate and using the stock nozzle diameter of 0.4mm.</p>
+
+<p>I experimented with several settings on the P1S with differing results:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nozzle Temp</th>
+      <th>Layers</th>
+      <th>Bed</th>
+      <th>Fans</th>
+      <th>Print Speed</th>
+      <th>Ironing</th>
+      <th>Flow Rate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>210</td>
+      <td>0.2mm</td>
+      <td>50C</td>
+      <td>100%</td>
+      <td>100%</td>
+      <td>OFF</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>220</td>
+      <td>0.28mm</td>
+      <td>50C</td>
+      <td>50%</td>
+      <td>75%</td>
+      <td>ON**</td>
+      <td>1.08*</td>
+    </tr>
+    <tr>
+      <td>230</td>
+      <td>0.3 mm</td>
+      <td>55C</td>
+      <td>0%</td>
+      <td>50%</td>
+      <td>ON**</td>
+      <td>1.08*</td>
+    </tr>
+    <tr>
+      <td>235*</td>
+      <td>0.3 mm</td>
+      <td>55C</td>
+      <td>0%</td>
+      <td>33%</td>
+      <td>OFF</td>
+      <td>1.1*</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>*this setting is out of spec for either the printer or filament.</p>
+
+<p>**this setting will increase the likelihood of nozzle clogging.</p>
+
+<h2 id="post-processing-to-improve-transparency">Post-processing to Improve Transparency</h2>
+
+<p>Print settings will help get close to the finished result, and this may be appropriate for use as-is in backlight applications, but in order to achieve an acceptable level of transparency to use this panel as a front light, post-processing of the sheet will be required.</p>
+
+<p>Improving the surface finish of PLA at home is generally achieved by:</p>
+
+<ul>
+  <li>Chemical smoothing using Ethyl Acetate.</li>
+  <li>Heat treatment using an iron.</li>
+  <li>Sanding the surface using fine grit.</li>
+</ul>
+
+<p>Again, I’ve experimented with these options to see which is the most optimal for this application.</p>
 
 
       </div>
