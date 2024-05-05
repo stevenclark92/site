@@ -1,4 +1,27 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="https://steveclark.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://steveclark.io/" rel="alternate" type="text/html" /><updated>2024-04-29T10:25:15+01:00</updated><id>https://steveclark.io/feed.xml</id><title type="html">steveclark.io</title><subtitle>tbd</subtitle><entry><title type="html">Key 6502 Addresses</title><link href="https://steveclark.io/electronics/6502-Addresses" rel="alternate" type="text/html" title="Key 6502 Addresses" /><published>2024-04-28T13:52:00+01:00</published><updated>2024-04-28T13:52:00+01:00</updated><id>https://steveclark.io/electronics/6502%20Addresses</id><content type="html" xml:base="https://steveclark.io/electronics/6502-Addresses"><![CDATA[<p>The 6502 will attempt to use several hard-coded addresses during normal operation; the presence of usable RAM or ROM at these locations is imperative for useful function. The former of these correspond to specific pages (which are each 256 bits long). The latter is an address, ideally stored in ROM, that is read during initialisation and from which the 6502 will begin to read instructions upon boot.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="https://steveclark.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://steveclark.io/" rel="alternate" type="text/html" /><updated>2024-05-05T20:20:07+01:00</updated><id>https://steveclark.io/feed.xml</id><title type="html">steveclark.io</title><subtitle>tbd</subtitle><entry><title type="html">Communicating with a Bricked Kindle Voyage over Serial/UART</title><link href="https://steveclark.io/electronics/kindle-serial-uart" rel="alternate" type="text/html" title="Communicating with a Bricked Kindle Voyage over Serial/UART" /><published>2024-05-04T13:00:00+01:00</published><updated>2024-05-04T13:00:00+01:00</updated><id>https://steveclark.io/electronics/kindle-serial-uart</id><content type="html" xml:base="https://steveclark.io/electronics/kindle-serial-uart"><![CDATA[<p>Amazon’s Kindle Voyage - released a decade ago this year - only existed for a short window of time. Occupying a niche above the Paper White but at a price point that remained within reach of the majority of consumers, the device offered a better display, automatic brightness adjustment and a more refined design that included page turn buttons with haptic feedback (added in response to countless user reviews lambasting the reading experience offered by touch-only models). </p>
+
+<p>Not long after its release - and with only a single generation produced - it was retired from sale and replaced by the Oasis. The Oasis is a lovely device to be sure, but with a significantly larger screen and a vastly inflated price, the mid-tier market was widely expected to transition to the lower-spec models following the voyage’s EOL. This did happen for the most part, but unexpectedly, the lack of a direct successor has also driven significant demand for second-hand Voyages even today in 2024.</p>
+
+<h2 id="unplanned--obsolescence">Unplanned (👀) Obsolescence</h2>
+
+<p>Kindles are extremely simple devices from a hardware perspective, and little has changed regarding their architecture since the launch of the earliest models. Arguably, the only technology category that’s progressed more slowly than the ebook reader is the book itself. But then, nor has the technology doing the reading, so why would either need to improve?</p>
+
+<p>Sure, touch was added a few generations in and the newer models are waterproof, but under the hood they’re still running the same 1 GHz-ish processor with the same half-GB-ish of ram, with a monochrome display, a WiFi chipset, a pitiful amount of onboard storage and a front light.</p>
+
+<p>Unlike the book, however, and as simple as ebook readers are by modern technological standards, they have a few key failure points that render them unusable after a decade or so of service:</p>
+
+<ul>
+  <li>Lithium Ion batteries have extremely finite lifespans.</li>
+  <li>eMMC has a limited number of write cycles.</li>
+  <li>USB connectors fail, as do solder joints.</li>
+  <li>People like me get a bit brave and “brick” them by deleting or corrupting firmware.</li>
+  <li>People unlike me “brick” them in the process of following standard update procedures…</li>
+  <li>Software developers tire of porting code to legacy components and sunset perfectly capable devices in favour of supporting the newer, shinier versions.</li>
+</ul>
+
+<p>It’s a crying shame from an environmental standpoint - a Kindle from 2015 has virtual feature parity with one from 2024, but due to these failure points the former can be found in droves on eBay for pennies (and probably in greater numbers still in drawers and landfills) while the latter commands a price that makes little sense given the old rope hidden behind the glossy bezel.</p>
+
+<p>– More to follow.</p>]]></content><author><name></name></author><category term="Electronics" /><category term="rK" /><category term="Kindle" /><summary type="html"><![CDATA[Amazon’s Kindle Voyage - released a decade ago this year - only existed for a short window of time. Occupying a niche above the Paper White but at a price point that remained within reach of the majority of consumers, the device offered a better display, automatic brightness adjustment and a more refined design that included page turn buttons with haptic feedback (added in response to countless user reviews lambasting the reading experience offered by touch-only models). ]]></summary></entry><entry><title type="html">Key 6502 Addresses</title><link href="https://steveclark.io/electronics/6502-Addresses" rel="alternate" type="text/html" title="Key 6502 Addresses" /><published>2024-04-28T13:52:00+01:00</published><updated>2024-04-28T13:52:00+01:00</updated><id>https://steveclark.io/electronics/6502%20Addresses</id><content type="html" xml:base="https://steveclark.io/electronics/6502-Addresses"><![CDATA[<p>The 6502 will attempt to use several hard-coded addresses during normal operation; the presence of usable RAM or ROM at these locations is imperative for useful function. The former of these correspond to specific pages (which are each 256 bits long). The latter is an address, ideally stored in ROM, that is read during initialisation and from which the 6502 will begin to read instructions upon boot.</p>
 
 <ul>
   <li>The zero page (ZP) is heavily used for storing registers.</li>
@@ -44,7 +67,9 @@
   <li>Using a larger nozzle diameter.</li>
 </ul>
 
-<p>All of these settings are designed to increase the bond between layers as much as possible, by making those layers thicker and hotter, and reducing how quickly they cool. Increasing the flow rate, too, causes layer lines to be rounder; this, too, has a positive impact on the optical characteristics of the panel. Again, as I was focused primarily on accessibility, I only changed things which could be changed without the purchase of new parts. That means printing on the standard textured build plate and using the stock nozzle diameter of 0.4mm.</p>
+<p>In simple terms: print hot, print thick, and print slow. All of these settings serve to increase the bond between layers as much as possible. Increasing the flow rate is purported to have a positive impact on the optical characteristics of the end result, but in my own experimentation this had rapidly diminishing returns.</p>
+
+<p>During my experimentation I only changed variables that wouldn’t necessitate the purchase of additional parts. That meant printing on the standard textured build plate and using the stock nozzle with a diameter of 0.4mm.</p>
 
 <p>I experimented with several settings on the P1S with differing results:</p>
 
@@ -68,7 +93,7 @@
       <td>100%</td>
       <td>100%</td>
       <td>OFF</td>
-      <td>1</td>
+      <td>0.98</td>
     </tr>
     <tr>
       <td>220</td>
@@ -77,7 +102,7 @@
       <td>50%</td>
       <td>75%</td>
       <td>ON**</td>
-      <td>1.08*</td>
+      <td>1.08**</td>
     </tr>
     <tr>
       <td>230</td>
@@ -86,7 +111,7 @@
       <td>0%</td>
       <td>50%</td>
       <td>ON**</td>
-      <td>1.08*</td>
+      <td>1.08**</td>
     </tr>
     <tr>
       <td>235*</td>
@@ -95,7 +120,7 @@
       <td>0%</td>
       <td>33%</td>
       <td>OFF</td>
-      <td>1.1*</td>
+      <td>1.1**</td>
     </tr>
   </tbody>
 </table>
