@@ -106,28 +106,115 @@
 
 <p>Amazon’s Kindle Voyage - released a decade ago this year - only existed for a short window of time. Occupying a niche above the Paper White but at a price point that remained within reach of the majority of consumers, the device offered a better display, automatic brightness adjustment and a more refined design that included page turn buttons with haptic feedback (added in response to countless user reviews lambasting the reading experience offered by touch-only models). </p>
 
-<p>Not long after its release - and with only a single generation produced - it was retired from sale and replaced by the Oasis. The Oasis is a lovely device to be sure, but with a significantly larger screen and a vastly inflated price, the mid-tier market was widely expected to transition to the lower-spec models following the voyage’s EOL. This did happen for the most part, but unexpectedly, the lack of a direct successor has also driven significant demand for second-hand Voyages even today in 2024.</p>
+<p>Not long after its release - and with only a single generation produced - it was retired from sale and replaced by the Oasis. The Oasis was a lovely device to be sure, but with a significantly larger screen and a vastly inflated price, the mid-tier market was widely expected to transition to the lower-spec models following the voyage’s EOL. This did happen for the most part, but unexpectedly, the lack of a direct successor has also driven significant demand for second-hand Voyages even today in 2024. The Oasis didn’t perform as well as other models, and was itself retired in favour of the Scribe after almost half a decade without any updates.</p>
 
-<h2 id="unplanned--obsolescence">Unplanned (👀) Obsolescence</h2>
+<p>The current device lineup represents the first significant hardware revision since 2013, and while the processor has been updated and the RAM doubled to 1 GB, the primary motivation for these changes appears to be the need for 64-bit architecture rather than a need for speed, as the chips in the new models are identically clocked and perform similarly in benchmarks.</p>
 
-<p>Kindles are extremely simple devices from a hardware perspective, and little has changed regarding their architecture since the launch of the earliest models. Arguably, the only technology category that’s progressed more slowly than the ebook reader is the book itself. But then, nor has the technology doing the reading, so why would either need to improve?</p>
+<h2 id="unplanned-obsolescence">Unplanned Obsolescence</h2>
 
-<p>Sure, touch was added a few generations in and the newer models are waterproof, but under the hood they’re still running the same 1 GHz-ish processor with the same half-GB-ish of ram, with a monochrome display, a WiFi chipset, a pitiful amount of onboard storage and a front light.</p>
+<p>Clearly, e-book readers are extremely simple devices from a hardware perspective, and little has changed regarding their configuration since the launch of the earliest models. Arguably, the only technology category that’s progressed more slowly than the e-book reader is the book. But then, if the fleshy technology doing the reading hasn’t changed, why would the silicon that provides the material need to continue to improve once perfected?</p>
 
-<p>Unlike the book, however, and as simple as ebook readers are by modern technological standards, they have a few key failure points that render them unusable after a decade or so of service:</p>
+<p>Unlike the book, and as simple as ebook readers are by modern technological standards, there are some key failure points that often render these devices unusable after a decade or so of service. Entropy sees to it that one of the following issues arises with increasing probability over time:</p>
 
 <ul>
   <li>Lithium Ion batteries have extremely finite lifespans.</li>
   <li>eMMC has a limited number of write cycles.</li>
   <li>USB connectors fail, as do solder joints.</li>
+  <li>Liquid and dust cause corrosion and shorts.</li>
   <li>People like me get a bit brave and “brick” them by deleting or corrupting firmware.</li>
   <li>People unlike me “brick” them in the process of following standard update procedures…</li>
   <li>Software developers tire of porting code to legacy components and sunset perfectly capable devices in favour of supporting the newer, shinier versions.</li>
 </ul>
 
-<p>It’s a crying shame from an environmental standpoint - a Kindle from 2015 has virtual feature parity with one from 2024, but due to these failure points the former can be found in droves on eBay for pennies (and probably in greater numbers still in drawers and landfills) while the latter commands a price that makes little sense given the old rope hidden behind the glossy bezel.</p>
+<p>It’s a crying shame from an environmental standpoint - a Kindle from 2015 has virtual feature parity with one from 2022, but due to these failure points, the former can be found in droves on eBay for pennies (and probably in greater numbers still in drawers and landfills) while the latter commands the same price as it did a decade ago for almost the same technology.</p>
 
-<p>– More to follow.</p>
+<p>Obviously, a product has greater value than the sum cost of its hardware, but I’m not concerned with that for the purpose of this project. I’m not questioning the value of the device, nor do I have a strong opinion in either direction. It’s worth what people are willing to pay.</p>
+
+<p>As it turns out, I was willing to pay £25 for a broken Kindle Voyage from eBay and three weekends of my life descending increasingly deeper into madness. Go figure.</p>
+
+<h2 id="the-hardware">The Hardware</h2>
+
+<p>The Kindle Voyage’s architecture is virtually identical to the current Kindle’s configuration, but with the same pixel density as the newer Oasis. It’s certainly not as powerful as the Oasis, which features an NXP i.MX7 Dual Core chip, but it’s most definitely not a slouch by e-reader standards, nor is it particularly far behind today’s flagships. The Voyage features:</p>
+
+<ul>
+  <li>
+    <p>A Freescale Semiconductor <a href="http://www.freescale.com/docs/pcn_attachments/16116_IMX6SLCEC.pdf">MCIMX6L8DVN10AB</a> Applications Processor, with a single core clocked at 1GHz.</p>
+  </li>
+  <li>
+    <p>4 GB (32 Gb) of Toshiba <a href="http://datasheet.octopart.com/THGBM5G5A1JBAIR-Toshiba-datasheet-14049752.pdf">THGBM5G5A1JBAIR</a>  eMMC NAND Flash.</p>
+  </li>
+  <li>
+    <p>512 MB (4 Gb) of Samsung K4P4G324EQ-RGC2 LPDDR2 SDRAM.</p>
+  </li>
+  <li>
+    <p>A Texas Instruments <a href="http://www.ti.com/product/drv2667">DRV2667</a> Piezo Haptic Driver.</p>
+  </li>
+</ul>
+
+<p>– Include Reference Architecture –</p>
+
+<p>The NXP i.MX processors are ARM-based SoCs designed for low-power mobile devices. They’re not the fastest options, being based on the [ARM CORTEX SOMETHING], but they’re full-featured processors that are well suited for this application. 512 MB of RAM sounds tiny compared to a phone or laptop, but considering the device spends the majority of its waking time gently cycling through pages of monochrome text, there’s little need for more. Even the fairly limited storage space provides ample capacity for thousands of e-books, with even the current flagship model only offering 8 GB of storage a decade later (and the exact same amount of RAM…).</p>
+
+<h2 id="the-software">The Software</h2>
+
+<p>Kindle’s operating system is a Linux flavour with a lot of overlap with Android. Following power on, the device is bootstrapped with Das U-Boot which hands off to the Linux kernel, which loads the Kindle’s desktop environment and applications. Drilling into it further, it’s quite an interesting set up - and one that makes a lot of sense given the application.</p>
+
+<p>Rather than having a single, fully-fledged u-boot instance (that would take longer to load - potentially 10 seconds from pushing the button to the desktop), Kindles have two instances installed. At boot, an extremely stripped back build handles the bare essentials - interfacing with the low-level hardware and pointing to the right addresses for the kernel to take over - but with a hidden option, called BIST, behind which hides a complete u-boot environment. This environment also includes an implementation of Fastboot, which those familiar with Android debugging will be familiar with, enabling more extensive debugging via USB from a computer.</p>
+
+<p>https://www.embeddedartists.com/wp-content/uploads/2020/11/iMX_Boot_Times.pdf</p>
+
+<h2 id="communicating-with-the-device">Communicating with the Device</h2>
+
+<p>UART 1.8v
+Minicom
+Root password</p>
+
+<p>UBOOT</p>
+
+<p>NAND Sectors going bad
+Making it worse by erasing the whole thing</p>
+
+<p>BIST
+FASTBOOT</p>
+
+<p>Flashing back onto the NAND
+Bad sectors preventing a complete transfer of the BIST image
+Nice boot loop bro</p>
+
+<p>Clearly, this is an unwinnable situation and something more drastic needs done:</p>
+
+<h2 id="replacing-the-problematic-nand-chip">Replacing the Problematic NAND Chip</h2>
+
+<p>BGA soldering is a right PITA.</p>
+<ul>
+  <li>lots of flux</li>
+  <li>don’t let it not have flux at any point</li>
+  <li>hotter than you think you need to go</li>
+  <li>wait longer than you think you should</li>
+  <li>don’t pull, let it come off on its own. Gentle pressure at MOST</li>
+  <li>ventilate</li>
+</ul>
+
+<p>Even being careful you will probably lose pads. Fortunately, these are (most often) NC pads, which have less copper holding them to the board. I lost two myself. If you lose a vital pad it’s game over so make sure you work slowly.</p>
+
+<p>The board seems to have survived its ordeal…</p>
+
+<p>New NAND!</p>
+
+<h2 id="getting-back-into-fastboot">Getting back into Fastboot</h2>
+
+<p>Using the i.MX USB tool to patch firmware into RAM</p>
+
+<h2 id="back-to-a-functioning-kindle">Back to a Functioning Kindle</h2>
+
+<p>Restoring original functionality</p>
+
+<h2 id="adding-some-new-functionality">Adding some new functionality</h2>
+
+<p>Original is boring, let’s get a full Linux distro on it.</p>
+
+<h2 id="whats-next">What’s next?</h2>
+
 
 
     </div>
