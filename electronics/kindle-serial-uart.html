@@ -155,6 +155,14 @@
 
 <p>The NXP i.MX processors are ARM-based SoCs designed for low-power mobile devices. They’re not the fastest options, being based on the [ARM CORTEX SOMETHING], but they’re full-featured processors that are well suited for this application. 512 MB of RAM sounds tiny compared to a phone or laptop, but considering the device spends the majority of its waking time gently cycling through pages of monochrome text, there’s little need for more. Even the fairly limited storage space provides ample capacity for thousands of e-books, with even the current flagship model only offering 8 GB of storage a decade later (and the exact same amount of RAM…).</p>
 
+<h3 id="usb-otg">USB OTG</h3>
+
+<p>Modern USB standards are - and I do not say this lightly - a fucking mess, and the journey that led us to our current state of peripheral connecting chaos was in part paved by the ubiquitous use of Micro USB across tablets and mobile devices in the 2010s. All Kindles before 2022 made use of Micro USB, implemented with an additional, non-standard-but-widely-accepted protocol known as USB OTG, or USB On The Go. This was extremely common for mobile phones and tablets of this era, but it did come as a surprise when looking under the shell of the device, as it was barely - if ever - used.</p>
+
+<p>USB OTG ports have five pins in place of the typical four, with the status of the additional ‘Sense’ pin being used to select whether the device should act as host or device. A floating ‘Sense’ pin - the default when using a non-OTG cable - will render service to the machine on the other end as a peripheral. Pulling this pin to ground by shorting the Sense and Ground pins inside the connector will instead inform the device that it should act as the host and expect a peripheral to be attached through the port. I hope you like dongles, because there are many where this is headed.</p>
+
+<p>The Kindle Voyage and the 7th Generation Paperwhite both made away with built-in headphone ports, as was the style at the time. In order to continue to be able to provide audio output, they were shipped with USB to 3.5mm dongles that made use of this OTG protocol to inform the kindle that it should output audio via its USB port. As far as I know, this functionality wasn’t used beyond this single adapter, but the beauty of this near-standard is that with a few tweaks of software <strong>it most certainly can be.</strong> More on this later.</p>
+
 <h2 id="the-software">The Software</h2>
 
 <p>Kindle’s operating system is a Linux flavour with a lot of overlap with Android. Following power on, the device is bootstrapped with Das U-Boot which hands off to the Linux kernel, which loads the Kindle’s desktop environment and applications. Drilling into it further, it’s quite an interesting set up - and one that makes a lot of sense given the application.</p>
