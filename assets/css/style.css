@@ -982,6 +982,9 @@ video {
 .flex {
     display:flex;
 }
+.table {
+    display:table;
+}
 .hidden {
     display:none;
 }
