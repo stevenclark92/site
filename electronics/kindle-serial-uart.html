@@ -124,14 +124,6 @@
 
 <p>I must also state that I have no political motivation for this article, nor is it intended to lambast Jeff Bezos or his organization. I believe that I own my devices and have the right to do what I want with them - and that Amazon has the right to keep selling as many new products as they like and withhold support when I inevitably mess something up.</p>
 
-<h3 id="dont-try-this-at-home-if-you-dont-know-what-youre-doing-1">Don’t try this at home if you don’t know what you’re doing.</h3>
-
-<p>This article will inevitably be a long read, and in it, I will explore how to perform a total hardware and software diagnostic and repair of a broken Kindle Voyage before outlining some possible modifications for those with the requisite knowledge, technical skills, and abandon. Many of these steps will equally apply to other devices for reasons that will become obvious, but I will disclaim early that <strong>**this is not intended to be a guide or to act as instructions</strong><strong>. If you choose to follow in my footsteps, </strong><strong>on your head be any damage to your devices or statutory standing with Amazon</strong>**.</p>
-
-<p>I will cite my sources and share the resources I found throughout this process; however, most information has been sourced from the depths of long-dead forum users’ post histories and deleted Reddit threads. If I have included a piece of information or a fragment of code that you have created, and I have failed to acknowledge your contribution appropriately, please do reach out so that I can do so.</p>
-
-<p>I must also state that I have no political motivation for this article, nor is it intended to lambast Jeff Bezos or his organization. I believe that I own my devices and have the right to do what I want with them - and that Amazon has the right to keep selling as many new products as they like and withhold support when I inevitably mess something up.</p>
-
 <p>With disclaimers disclaimed and backs covered, let’s get into it.</p>
 
 <h2 id="why-the-kindle-voyage">Why the Kindle Voyage?</h2>
@@ -237,92 +229,6 @@
 <p>– Include Reference Architecture –</p>
 
 <p>The NXP i.MX processors are ARM-based SoCs designed for low-power mobile devices. They’re not the fastest, but they’re full-featured ARM Cortex-based processors well-suited for this application. 512 MB of RAM sounds tiny compared to a modern phone or laptop, but considering the device spends most of its waking time gently cycling through pages of monochrome text, there’s little need for more. Even the limited storage space provides ample capacity for thousands of e-books - even the current flagship model offers only 8 GB of storage and 1 GB of RAM a decade later.</p>
-<h3 id="usb-otg">USB OTG</h3>
-
-<p>Modern USB standards are - and I do not say this lightly - a fucking mess and the journey that led us to our current state of peripheral chaos was in part paved by the ubiquitous use of Micro USB across tablets and mobile devices in the 2010s. All Kindles before 2022 made use of not only Micro USB, but implemented an additional, supplement-to-standard-but-widely-accepted protocol known as USB OTG, or USB On The Go.</p>
-
-<p>USB OTG ports have five pins in place of the typical four, with the status of the additional ‘Sense’ pin being used to select whether the device should act as host or device. A floating ‘Sense’ pin - the default when using a non-OTG cable - will render service to the machine on the other end as a peripheral. Pulling this pin to ground by shorting the Sense and Ground pins inside the connector will instead inform the device that it should act as the host and expect a peripheral to be attached through the port. I hope you like dongles because there are many where this is headed.</p>
-
-<p>The Kindle Voyage and the 7th Generation Paperwhite both made away with built-in headphone ports, as was the style at the time. In order to continue to be able to provide audio output, they were shipped with USB to 3.5mm dongles that made use of this OTG protocol to inform the Kindle that it should output audio via its USB port. As far as I know, this functionality wasn’t used beyond this single adapter, but the beauty of this near-standard is that with a few tweaks of software <strong>it most certainly can be.</strong> More on this later.</p>
-
-<h2 id="the-software">The Software</h2>
-
-<p>Kindle’s operating system is a Linux flavour with a lot of overlap with Android. Following power on, the device is bootstrapped with Das U-Boot which hands off to the Linux kernel, which loads the Kindle’s desktop environment and applications. Drilling into it further, it’s quite an interesting set-up and one that makes a lot of sense given the application.</p>
-
-<p>Rather than having a single, fully-fledged u-boot instance (that would take longer to load - potentially 10 seconds from pushing the button to the desktop), Kindles have two instances installed. At boot, an extremely stripped-back build handles the bare essentials - interfacing with the low-level hardware and pointing to the right addresses for the kernel to take over - but with a hidden option, called BIST, behind which hides a complete u-boot environment. This environment also includes an implementation of Fastboot, which those familiar with Android debugging will be familiar with, enabling more extensive debugging via USB from a computer.</p>
-
-<p>https://www.embeddedartists.com/wp-content/uploads/2020/11/iMX_Boot_Times.pdf</p>
-
-<h2 id="communicating-with-the-device">Communicating with the Device</h2>
-
-<p>UART 1.8v</p>
-
-<p>Minicom</p>
-
-<p>Root password</p>
-
-<p>UBOOT</p>
-
-<p>NAND Sectors going bad</p>
-
-<p>Making it worse by erasing the whole thing</p>
-
-<p>BIST</p>
-
-<p>FASTBOOT</p>
-
-<p>Flashing back onto the NAND</p>
-
-<p>Bad sectors preventing a complete transfer of the BIST image</p>
-
-<p>Nice boot loop bro</p>
-
-<p>Clearly, this is an unwinnable situation and something more drastic needs done:</p>
-
-<h2 id="replacing-the-problematic-nand-chip">Replacing the Problematic NAND Chip</h2>
-
-<p>BGA soldering is a right cunt</p>
-
-<ul>
-  <li>
-    <p>lots of flux</p>
-  </li>
-  <li>
-    <p>don’t let it not have flux at any point</p>
-  </li>
-  <li>
-    <p>hotter than you think you need to go</p>
-  </li>
-  <li>
-    <p>wait longer than you think you should</p>
-  </li>
-  <li>
-    <p>don’t pull, let it come off on its own. Gentle pressure at MOST</p>
-  </li>
-  <li>
-    <p>ventilate</p>
-  </li>
-</ul>
-
-<p>Even being careful you will probably lose pads. Fortunately, these are (most often) NC pads, which have less copper holding them to the board. I lost two myself. If you lose a vital pad it’s game over so make sure you work slowly.</p>
-
-<p>The board seems to have survived its ordeal…</p>
-
-<p>New NAND!</p>
-
-<h2 id="getting-back-into-fastboot">Getting back into Fastboot</h2>
-
-<p>Using the i.MX USB tool to patch firmware into RAM</p>
-
-<h2 id="back-to-a-functioning-kindle">Back to a Functioning Kindle</h2>
-
-<p>Restoring original functionality</p>
-
-<h2 id="adding-some-new-functionality">Adding some new functionality</h2>
-
-<p>Original is boring, let’s get a full Linux distro on it.</p>
-
-<h2 id="whats-next">What’s next?</h2>
 
 
     </div>
