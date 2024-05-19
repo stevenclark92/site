@@ -973,12 +973,6 @@ video {
 .mt-0 {
     margin-top:0px;
 }
-.block {
-    display:block;
-}
-.inline {
-    display:inline;
-}
 .flex {
     display:flex;
 }
@@ -1079,10 +1073,6 @@ video {
 }
 .italic {
     font-style:italic;
-}
-.ordinal {
-    --tw-ordinal:ordinal;
-    font-variant-numeric:var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction);
 }
 .text-blue-400 {
     --tw-text-opacity:1;
