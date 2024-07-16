@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html lang="en-GB">
+<head>
+  <!-- Meta -->
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/assets/css/style.css?v=">
+  <!-- Icon stack -->
+          <meta name="msapplication-TileColor" content="#FFF" />
+        <meta name="theme-color" content="#FFF" />
+        <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicon/apple-icon-57x57.png" />
+        <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicon/apple-icon-60x60.png" />
+        <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicon/apple-icon-72x72.png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicon/apple-icon-114x114.png" />
+        <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicon/apple-icon-76x76.png" />
+        <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicon/apple-icon-120x120.png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicon/apple-icon-152x152.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-icon-180x180.png" />
+        <link rel="icon" type="image/png" href="/assets/favicon/favicon-32x32.png" sizes="32x32" />
+        <link rel="icon" type="image/png" href="/assets/favicon/android-icon-36x36.png" sizes="36x36" />
+        <link rel="icon" type="image/png" href="/assets/favicon/android-icon-48x48.png" sizes="48x48" />
+        <link rel="icon" type="image/png" href="/assets/favicon/android-icon-72x72.png" sizes="72x72" />
+        <link rel="icon" type="image/png" href="/assets/favicon/android-icon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/png" href="/assets/favicon/android-icon-144x144.png" sizes="144x144" />
+        <link rel="icon" type="image/png" href="/assets/favicon/android-icon-192x192.png" sizes="192x192" />
+        <link rel="icon" type="image/png" href="/assets/favicon/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/png" href="/assets/favicon/favicon-16x16.png" sizes="16x16" />
+        <meta name="msapplication-TileImage" content="/assets/favicon/ms-icon-144x144.png" />
+        <meta name="msapplication-square70x70logo" content="/assets/favicon/ms-icon-70x70.png" />
+        <meta name="msapplication-square150x150logo" content="/assets/favicon/ms-icon-150x150.png" />
+        <meta name="msapplication-wide310x150logo" content="/assets/favicon/ms-icon-310x150.png" />
+        <meta name="msapplication-square310x310logo" content="/assets/favicon/ms-icon-310x310.png" />
+        <link href="/assets/favicon/apple-startup-320x460.png" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)" rel="apple-touch-startup-image" />
+        <link href="/assets/favicon/apple-startup-640x920.png" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+        <link href="/assets/favicon/apple-startup-640x1096.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+        <link href="/assets/favicon/apple-startup-748x1024.png" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 1) and (orientation: landscape)" rel="apple-touch-startup-image" />
+        <link href="/assets/favicon/apple-startup-750x1024.png" media="" rel="apple-touch-startup-image" />
+        <link href="/assets/favicon/apple-startup-750x1294.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+        <link href="/assets/favicon/apple-startup-768x1004.png" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 1) and (orientation: portrait)" rel="apple-touch-startup-image" />
+        <link href="/assets/favicon/apple-startup-1182x2208.png" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" rel="apple-touch-startup-image" />
+        <link href="/assets/favicon/apple-startup-1242x2148.png" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" rel="apple-touch-startup-image" />
+        <link href="/assets/favicon/apple-startup-1496x2048.png" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" rel="apple-touch-startup-image" />
+        <link href="/assets/favicon/apple-startup-1536x2008.png" media="(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" rel="apple-touch-startup-image" />
+        <link rel="manifest" href="/assets/favicon/manifest.json" />
+  <!-- Site title & meta -->
+  <title>Building a Custom STM32/QMK Macropad | steveclark.io</title>
+  <!-- TODO metadesc -->
+</head>
+
+<body class="dark:bg-zinc-800 dark:text-slate-50">
+  <header class="lg:fixed max-lg:flex max-xl:items-baseline p-8 lg:top-10 lg:left-10 font-light">
+  <p id="logo-mb" class="text-2xl">
+    <a class="max-xl:hidden" href="https://steveclark.io/">steveclark<span class="text-yellow-400">.</span>io
+    </a>
+    <a class="xl:hidden" href="https://steveclark.io/">sc<span class="text-yellow-400">.</span>io
+    </a>
+  </p>
+  <nav class="*:py-1 lg:*:mt-4 max-lg:*:flex max-lg:flex justify-between w-full">
+    <ul class="lg:*:mt-2">
+      <li><span class="text-yellow-400 mr-1 max-lg:ml-2">/</span><a href="/notes">notes</a></li>
+      <li><span class="text-yellow-400 mr-1 max-lg:ml-2">/</span><a href="/projects">projects</a></li>
+      <li><span class="text-yellow-400 mr-1 max-lg:ml-2">/</span><a href="/">about</a></li>
+    </ul>
+    <ul class="lg:*:mt-2 max-sm:hidden">
+      <li><span class="text-blue-400 mr-1 max-lg:ml-2">|</span><a href="https://github.com/stevenclark92" target="_blank">github</a></li>
+      <li><span class="text-blue-400 mr-1 max-lg:ml-2">|</span><a href="https://www.linkedin.com/in/stevenjc/" target="_blank">linkedin</a></li>
+    </ul>
+  </nav>
+</header>
+  <main class="lg:m-10 p-8">
+    <!-- TODO: Refactor -->
+    <div
+      class="mx-auto prose prose-a:font-normal prose-a:decoration-1 prose-h1:font-bold prose-h2:font-medium dark:prose-invert mb-6"
+    >
+        <p class="align">
+    <span
+      class="text-transparent bg-clip-text bg-gradient-to-br from-blue-300 to-indigo-500 lowercase font-semibold">
+      project overview
+    </span>
+  </p>
+
+<h1 id="building-a-custom-stm32qmk-macropad">Building a Custom STM32/QMK Macropad</h1>
+
+<p><img src="/assets/images/macropad/macropad_shell.png" alt="The case in meatspace" /></p>
+
+<p>A close friend of mine, <a href="https://www.bencoveney.com/">Ben</a>, has served as a long-time sounding board and coding coach throughout my time making and breaking things. One of my current projects is a custom 3D-printed keyboard. Ben’s moving away soon, and I wanted to build him a custom board as a parting gift.</p>
+
+<p>Being a developer, Ben already has a solid daily driver, so rather than leave him with some bespoke e-waste, we landed on building a slightly different device: a 5x5 load-out selector for <em>Counter Strike 2</em>.</p>
+
+<p>I wanted to set myself a challenge to <a href="https://www.youtube.com/watch?v=72a85tWOJVY">build this in a single weekend</a>. To meet that deadline, I allowed myself to only use components I currently had in my possession. Ordering new things costs time and refusing to do that ensured I kept within my time limit.</p>
+
+<h3 id="ingredients">Ingredients</h3>
+
+<p>If you’d like to create something similar, the materials I used in this project are as follows:</p>
+
+<p><strong>Core Components:</strong></p>
+<ul>
+  <li>25 x Gateron Low Profile Red Switches</li>
+  <li>25 x Kalih Low Profile PCB Hotswap Sockets</li>
+  <li>25 x 1N4148 Signal Switching Diodes</li>
+  <li>1 x STM32F103C8T6 Microcontroller Board</li>
+</ul>
+
+<p><strong>Secondary Components:</strong></p>
+<ul>
+  <li>22 &amp; 26 Gauge Wire</li>
+  <li>Elegoo Basic White PLA Filament</li>
+  <li>BambuLab Matte Black PLA Filament</li>
+  <li>M2 Screws &amp; Threaded Inserts</li>
+  <li>Self-Adhesive Rubber Feet</li>
+</ul>
+
+<p><strong>Tools &amp; Equipment:</strong></p>
+<ul>
+  <li>A BambuLab P1S 3D Printer</li>
+  <li>A Soldering Iron</li>
+  <li>A Hot Glue Gun</li>
+  <li>A USB to TTL UART Adapter</li>
+</ul>
+
+<p><strong>Software Packages</strong></p>
+<ul>
+  <li>Autodesk Fusion360</li>
+  <li>Visual Studio Code</li>
+  <li>QMK &amp; QMK Toolbox, installed via Homebrew</li>
+  <li>STMCubeProgrammer</li>
+</ul>
+
+<h2 id="designing--printing-the-case">Designing &amp; Printing the Case</h2>
+
+<p>I’m not much of a CS2 player, so I asked Ben to sketch his ideal device. He shared a quick sketch of a 5x5 key grid mapped to the weapon select options shown in-game:</p>
+
+<p><img src="/assets/images/macropad/macropad_brief.png" alt="The brief" /></p>
+
+<p>Taking this sketch, I created a mock-up of the device in Fusion 360 based on some modular components I’d developed previously for another board. The simplicity of the grid made this pretty straightforward:</p>
+
+<p><img src="/assets/images/macropad/macropad_mockup.png" alt="A quick mockup" /></p>
+
+<p>This model looked good, but I needed to figure out how to produce a functioning device with room for the controller board, switches and wiring. Iterating through the project, I landed on the following three-part case:</p>
+
+<p><img src="/assets/images/macropad/macropad_exploded_model.png" alt="The final shell model" /></p>
+
+<p>I made this case in three parts to give myself some margin for error and reduce potential wastage from iteration. It’s much faster to print a new rim or base alone than to print an entire bottom housing, and in turn, it allows some wiggle room if fitting things together is a tight squeeze. Admittedly, this flexibility is at the expense of finish quality and ease of assembly, but as production volume wasn’t a consideration, I could afford to make those sacrifices to expedite up the design process.</p>
+
+<p>After printing, I snapped in some switches and keycaps for a test fit to provide a sense of how the finished device will look and feel. I made some minor tweaks to improve overall tolerances and the spacing around the USB port before adding the finishing touches to the shell.</p>
+
+<p><img src="/assets/images/macropad/macropad_shell.png" alt="The case in meatspace (again)" /></p>
+
+<p>I used heated inserts in the baseplate to accept M2 screws which were hidden underneath the corner switches. This meant there were no visible connectors while ensuring future repairability should something go wrong. I opted to use the outside corners only to leave plenty of space for components, but if I were to produce a V2 I’d consider adding a centre screw, too.</p>
+
+<p><img src="/assets/images/macropad/heated_insert.png" alt="A slightly dodgy heated insert" /></p>
+
+<p>Admittedly this is not my finest work, but I doubt anyone is ever going to see this insert ever again.</p>
+
+<h2 id="building-the-matrix">Building the Matrix</h2>
+
+<p>Wiring up a keyboard matrix is pretty simple. Switches work in both directions (at least, the ones I had did - check yours first). One side of each switch is wired to its horizontal neighbours and the other to its vertical neighbours in a grid. This gives each switch a unique matrix position - the upper left key is at position (0, 0), the bottom right at (4, 4), etc.</p>
+
+<p><img src="/assets/images/macropad/macropad_matrix.png" alt="Welcome to the real world" /></p>
+
+<p>A thousand tiny burns later, I had a finished matrix. I used hot-swap sockets so Ben can upgrade the switches to match his preference should he wish to in future. These are designed to be PCB mounted, but I accommodated their dimensions into the plate design so they snap into place. This was a lot of work for only minimal gain, and I’d probably skip this next time.</p>
+
+<p>I wired the diodes slightly differently from most hand-wired boards. Typically, you’d solder them oriented from Column to Row, but I oriented them from Row to Column. This is a personal preference and makes no practical difference provided they are in the right position relative to the switches.</p>
+
+<p>You can also see that I gave up using insulated rows and instead used the diodes’ legs after the first row. This was a function of the available space and the fact I didn’t need to worry too much about insulation, meaning there was little benefit to the longer-winded approach. I’d strongly recommend putting in the extra effort for designs with any wire overlapping.</p>
+
+<p>One error of judgment I made at this point was using CA glue to secure the sockets after wiring. I was concerned that the friction fit would fail over time with repeated use; I wanted to ensure longevity. While CA worked perfectly to secure the sockets in place, it also clogged a handful of the sockets and rendered them useless. I managed to salvage most of them with acetone and a steady hand, but I needed to go back and replace 5 sockets with fresh ones as I was afraid of dissolving the PLA and making a mess of the finish. If you’re following along, please learn from my mistake - use hot glue or print a back plate.</p>
+
+<h2 id="setting-up-the-controller">Setting up the controller</h2>
+
+<p>The hard part was over, but the keyboard still needs a brain. Thankfully, smarter people than me have spent years developing hardware interfaces, controller boards, firmware and software to solve this problem. Enter QMK.</p>
+
+<p>QMK is an open-source firmware package for custom keyboards written in C. I’ve only used it a handful of times but have quickly become a huge proponent of the project. QMK supports myriad boards and microcontrollers that include ARM or AVR chips, and there’s a huge community and pool of resources available online.</p>
+
+<p>I’d originally planned to use an ESP32 for this project, but unfortunately it’s not supported by QMK. Fortunately, I had some STM32 ARM-based “blue pill” boards to hand which are. These inexpensive boards can be purchased for less than £5 each and work perfectly, provided you’re willing to do a small amount of work to prepare them.</p>
+
+<p>The specific microcontroller on the board I’m using is an STM32F103C8T6 with a single-core ARM processor clocked at 72 MHz. Many of these boards contain unreliable counterfeit chips from China, and some just flat out don’t work at all, but the parts I received from Amazon appear to use genuine components and function as expected. Make sure to read reviews and test thoroughly.</p>
+
+<h3 id="preparing--flashing-the-board-with-firmware">Preparing &amp; flashing the board with firmware</h3>
+
+<p>The STM32F103C8T6 boards arrive blank and need a bootloader to function. A bootloader enables ports, manages I/O (including USB) and assigns a name to each pin that can be referenced in higher-level code (like QMK). It’s an analogue for the BIOS in a computer, but less standardised and stored directly on the microcontroller’s ROM.</p>
+
+<p>Rather than trying to reinvent the wheel by writing my own bootloader to enable USB, I’m using <a href="https://github.com/rogerclarkmelbourne/STM32duino-bootloader/blob/master/binaries/generic_boot20_pc13.bin">the STM32duino binary built by rogerclarkmelbourne on GitHub</a>.</p>
+
+<h4 id="i-installing-a-bootloader-over-uart">I. Installing a bootloader over UART</h4>
+
+<p>The STM32 board I’m using has two jumpers on top; some boards have two push buttons, and others have unpopulated through holes. These jumpers tie two pins, BOOT0 and BOOT1, high or to ground. The voltage applied to these pins determines the boot configuration.</p>
+
+<p>By default, both pins are tied low. When powered, the board attempts to boot from the onboard ROM, which is currently blank. By switching the lower jumper to tie BOOT1 high, the board will boot with UART communication enabled and allow flashing without an STMLink.</p>
+
+<p>The board uses 3.3 volts, so ensure everything is at that logic level when using UART. The rest is simple:</p>
+
+<ul>
+  <li>Connect the ground on both boards together</li>
+  <li>Connect 3v3 on both boards (or leave disconnected and power the STM via its USB port)</li>
+  <li>Connect TX and RX from the TTL board to pins A9 and A10 on the STM board</li>
+</ul>
+
+<p>Reset the STM board using its reset switch, and you should be able to connect via STMCubeProgrammer over UART. If successful, you’ll see the data currently on the device’s ROM - it should be all FFFFFFs or 000000s. If not, double check you have the RX/TX pins the right way around and that all of your connections are solid.</p>
+
+<p>The steps from here are pretty self-explanatory. Locate the binary file in the browser, hit download, verify the write succeeded, and disconnect. If all worked according to plan, you should be able to switch the jumpers back to their default configuration, reboot the controller and see it recognised by your computer for the first time over USB.</p>
+
+<h4 id="ii-configuring-compiling-and-flashing-qmk">II. Configuring, compiling and flashing QMK</h4>
+
+<p>QMK is super powerful and deserves a write-up of its own, but for the purposes of this guide, the steps needed to get to a functioning keyboard are simple once you figure them out. Unfortunately, there’s a lot of complex, often conflicting and outdated information online, so it can be challenging to wrap your head around exactly what to do.</p>
+
+<p>I made use of several online tools to get set up. I started by mapping my layout using KLE (http://www.keyboard-layout-editor.com/#/) and copying the JSON into KBF (https://kbfirmware.com) before configuring the matrix layout, key mapping and removing options related to RGB LEDs.</p>
+
+<p>KBF is deprecated, and I wouldn’t install the code directly from it to my board, but I find it helps to visually map out the locations of keys and their function in a browser. Once complete, I downloaded the firmware folder (not the compiled file) and headed to my terminal. If you’ve not worked with QMK before, <a href="https://docs.qmk.fm/newbs">now is the time to install it</a>.</p>
+
+<p>Using the QMK CLI, I imported and converted the legacy KBF files to a QMK configuration. This created a new folder in my QMK directory for the new board containing the JSON files that describe the configuration. The default settings KBF uses are for AVR boards, so I made the following changes to keyboard.json to match the hardware configuration I was using:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"bootloader": "stm32duino", 
+"diode_direction": "ROW2COL",
+"debounce": 5,
+"processor": "STM32F103",
+"board": "STM32_F103_STM32DUINO"
+</code></pre></div></div>
+
+<p>This enabled me to build my firmware without errors using the CLI, which produced a single binary file to be flashed to the board. Flashing it is really simple with QMK Toolbox. I enabled auto flash, selected my new binary, and connected the STM32 board via USB. Within 10 seconds, the board rebooted, and a fully functioning HID was ready to go.</p>
+
+<h3 id="finishing-up">Finishing Up</h3>
+
+<p>With these steps complete and the case screwed together, the device now works as planned. If I had more time, I’d have tried to enable something like VIA, but I ran out of weekend before I could convert the JSON-based QMK to C, install VIA and rebuild. For now, Ben will have to rebuild and re-flash the firmware to change the keymap, but that process can be completed in about two minutes.</p>
+
+<p>Overall, I’m happy with the end result. There are things I’d do differently next time - most notably, adjusting tolerances to give me more room to manoeuvre. Given the constraints I set myself, I consider it a great success.</p>
+
+<p>The finished device feels sturdy, works well and feels great to use. I’m overall happy with the aesthetics, too. I used an assortment of old, scuffed caps for testing and photos, but Ben’s planning to change these out for custom caps soon. I’ll ask for a photo of the finished article when they arrive to share here.</p>
+
+<p><img src="/assets/images/macropad/macropad_finished.png" alt="The finished article" /></p>
+
+
+
+    </div>
+  </main>
+
+  <footer
+    class="fixed text-xs bg-inherit rounded-md text-zinc-500 bottom-0 left-0"
+  >
+    <p class="p-2 lg:m-16">© Steve Clark 2024</p>
+  </footer>
+
+
+</body>
+</html>
