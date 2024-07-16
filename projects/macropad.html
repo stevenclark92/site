@@ -141,9 +141,9 @@
 
 <p><img src="/assets/images/macropad/macropad_exploded_model.png" alt="The final shell model" /></p>
 
-<p>I made this case in three parts to give myself some margin for error and reduce potential wastage from iteration. It’s much faster to print a new rim or base alone than to print an entire bottom housing, and in turn, it allows some wiggle room if fitting things together is a tight squeeze. Admittedly, this flexibility is at the expense of finish quality and ease of assembly, but as production volume wasn’t a consideration, I could afford to make those sacrifices to expedite up the design process.</p>
+<p>I made this case in three parts to give myself some margin for error and reduce potential wastage from iteration. It’s much faster to print a new rim or base alone than to print an entire bottom housing, and in turn it allows some wiggle room if fitting things together is a tight squeeze. Admittedly, this flexibility is at the expense of finish quality and ease of assembly, but as production volume wasn’t a consideration I could afford to make those sacrifices to expedite up the design process.</p>
 
-<p>After printing, I snapped in some switches and keycaps for a test fit to provide a sense of how the finished device will look and feel. I made some minor tweaks to improve overall tolerances and the spacing around the USB port before adding the finishing touches to the shell.</p>
+<p>After printing I snapped in some switches and keycaps for a test fit to provide a sense of how the finished device will look and feel. I made some minor tweaks to improve overall tolerances and the spacing around the USB port before adding some finishing touches to the shell.</p>
 
 <p><img src="/assets/images/macropad/macropad_shell.png" alt="The case in meatspace (again)" /></p>
 
@@ -192,8 +192,8 @@
 <p>The board uses 3.3 volts, so ensure everything is at that logic level when using UART. The rest is simple:</p>
 
 <ul>
-  <li>Connect the ground on both boards together</li>
-  <li>Connect 3v3 on both boards (or leave disconnected and power the STM via its USB port)</li>
+  <li>Connect ground to ground</li>
+  <li>Connect 3v3 to 3v3 (or leave disconnected and power the STM via its USB port)</li>
   <li>Connect TX and RX from the TTL board to pins A9 and A10 on the STM board</li>
 </ul>
 
@@ -205,9 +205,9 @@
 
 <p>QMK is super powerful and deserves a write-up of its own, but for the purposes of this guide, the steps needed to get to a functioning keyboard are simple once you figure them out. Unfortunately, there’s a lot of complex, often conflicting and outdated information online, so it can be challenging to wrap your head around exactly what to do.</p>
 
-<p>I made use of several online tools to get set up. I started by mapping my layout using KLE (http://www.keyboard-layout-editor.com/#/) and copying the JSON into KBF (https://kbfirmware.com) before configuring the matrix layout, key mapping and removing options related to RGB LEDs.</p>
+<p>I made use of two popular online tools to get set up. I started by <a href="http://www.keyboard-layout-editor.com/#/">mapping my layout using KLE</a> and <a href="https://kbfirmware.com">copying the JSON into KBF</a> before configuring the matrix layout, key mapping and removing options related to RGB LEDs.</p>
 
-<p>KBF is deprecated, and I wouldn’t install the code directly from it to my board, but I find it helps to visually map out the locations of keys and their function in a browser. Once complete, I downloaded the firmware folder (not the compiled file) and headed to my terminal. If you’ve not worked with QMK before, <a href="https://docs.qmk.fm/newbs">now is the time to install it</a>.</p>
+<p>KBF is deprecated and I wouldn’t install the code directly from it to my board, but I find it really convenient for visually mapping out the locations of keys and their function in the browser. Once complete, I downloaded the firmware folder (not the compiled file) and headed to my terminal. If you’ve not worked with QMK before, <a href="https://docs.qmk.fm/newbs">now is the time to install it</a>.</p>
 
 <p>Using the QMK CLI, I imported and converted the legacy KBF files to a QMK configuration. This created a new folder in my QMK directory for the new board containing the JSON files that describe the configuration. The default settings KBF uses are for AVR boards, so I made the following changes to keyboard.json to match the hardware configuration I was using:</p>
 
